@@ -7,6 +7,7 @@ import { HomeStackParamList } from './home.stack.type';
 export type BottomTabParamList = {
   HomeStack: NavigatorScreenParams<HomeStackParamList>;
   FavouritesStack: NavigatorScreenParams<FavouritesStackParamList>;
+  ScheduleStack: NavigatorScreenParams<any>;
   ProfileStack: NavigatorScreenParams<any>;
 };
 

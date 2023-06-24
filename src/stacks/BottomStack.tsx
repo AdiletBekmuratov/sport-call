@@ -10,6 +10,7 @@ import ProfileStack from './ProfileStack';
 import { BottomTabParamList } from '../types';
 
 import tw from '@/config/twrnc';
+import { ScheduleStack } from './ScheduleStack';
 
 type MaterialCommunityName = ComponentProps<typeof MaterialCommunity>['name'];
 
@@ -53,6 +54,24 @@ export default function MainBottomTabs() {
           title: 'Сохраненные',
           tabBarIcon: ({ focused, color, size }) => {
             const iconName: MaterialCommunityName = 'bookmark-outline';
+
+            return (
+              <View style={tw`p-2 rounded-lg ${focused ? 'bg-[#D0FD3E]' : 'bg-transparent'}`}>
+                <MaterialCommunity name={iconName} size={size} color={color} />
+              </View>
+            );
+          },
+          tabBarActiveTintColor: '#000000',
+          tabBarInactiveTintColor: '#FFFFFF',
+        }}
+      />
+      <Tab.Screen
+        name="ScheduleStack"
+        component={ScheduleStack}
+        options={{
+          title: 'Расписание',
+          tabBarIcon: ({ focused, color, size }) => {
+            const iconName: MaterialCommunityName = 'notebook-outline';
 
             return (
               <View style={tw`p-2 rounded-lg ${focused ? 'bg-[#D0FD3E]' : 'bg-transparent'}`}>

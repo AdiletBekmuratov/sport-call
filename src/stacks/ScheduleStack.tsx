@@ -1,13 +1,14 @@
-import { ProfileScreen } from '@/screens/Profile';
+import { ScheduleScreen } from '@/screens/Schedule';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import { View, Text } from 'react-native';
 
 const Stack = createNativeStackNavigator<any>();
 
-const ProfileStack = () => {
+export const ScheduleStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="ProfileScreen"
+      initialRouteName="ScheduleScreen"
       screenOptions={{
         headerStyle: {
           backgroundColor: '#000000',
@@ -17,12 +18,10 @@ const ProfileStack = () => {
         },
       }}>
       <Stack.Screen
-        name="ProfileScreen"
-        options={{ title: 'Мой профиль' }}
-        component={ProfileScreen}
+        name="ScheduleScreen"
+        options={{ title: 'Расписание' }}
+        component={ScheduleScreen}
       />
     </Stack.Navigator>
   );
 };
-
-export default ProfileStack;
