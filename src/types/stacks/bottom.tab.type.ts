@@ -7,6 +7,7 @@ import { HomeStackParamList } from './home.stack.type';
 export type BottomTabParamList = {
   HomeStack: NavigatorScreenParams<HomeStackParamList>;
   FavouritesStack: NavigatorScreenParams<FavouritesStackParamList>;
+  ProfileStack: NavigatorScreenParams<any>;
 };
 
 export type MainBottomTabsScreenProps<T extends keyof BottomTabParamList> = BottomTabScreenProps<

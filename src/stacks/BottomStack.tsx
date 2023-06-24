@@ -4,10 +4,12 @@ import { ComponentProps } from 'react';
 import { View } from 'react-native';
 
 import HomeStack from './HomeStack';
+import FavouritesStack from './FavouritesStack';
+import ProfileStack from './ProfileStack';
+
 import { BottomTabParamList } from '../types';
 
 import tw from '@/config/twrnc';
-import FavouritesStack from './FavouritesStack';
 
 type MaterialCommunityName = ComponentProps<typeof MaterialCommunity>['name'];
 
@@ -51,6 +53,24 @@ export default function MainBottomTabs() {
           title: 'Сохраненные',
           tabBarIcon: ({ focused, color, size }) => {
             const iconName: MaterialCommunityName = 'bookmark-outline';
+
+            return (
+              <View style={tw`p-2 rounded-lg ${focused ? 'bg-[#D0FD3E]' : 'bg-transparent'}`}>
+                <MaterialCommunity name={iconName} size={size} color={color} />
+              </View>
+            );
+          },
+          tabBarActiveTintColor: '#000000',
+          tabBarInactiveTintColor: '#FFFFFF',
+        }}
+      />
+      <Tab.Screen
+        name="ProfileStack"
+        component={ProfileStack}
+        options={{
+          title: 'Профиль',
+          tabBarIcon: ({ focused, color, size }) => {
+            const iconName: MaterialCommunityName = 'account-outline';
 
             return (
               <View style={tw`p-2 rounded-lg ${focused ? 'bg-[#D0FD3E]' : 'bg-transparent'}`}>
