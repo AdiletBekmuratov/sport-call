@@ -4,13 +4,15 @@ import React, { FC } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
 import tw from '@/config/twrnc';
-import { HomeStackScreenProps } from '@/types/index';
+import { FavouritesStackScreenProps, HomeStackScreenProps } from '@/types/index';
 import { blurhash } from '@/utils/blurhash';
 
-export const EventCard: FC<Pick<HomeStackScreenProps<'HomeScreen'>, 'navigation'>> = ({
-  navigation,
-}) => {
+export const EventCard: FC<
+  | Pick<HomeStackScreenProps<'HomeScreen'>, 'navigation'>
+  | Pick<FavouritesStackScreenProps<'FavouritesScreen'>, 'navigation'>
+> = ({ navigation }) => {
   return (
+    // @ts-ignore
     <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('EventDetailsScreen')}>
       <View style={tw`relative`}>
         <Image

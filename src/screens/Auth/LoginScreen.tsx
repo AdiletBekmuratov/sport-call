@@ -45,7 +45,6 @@ export const LoginScreen: FC<AuthStackScreenProps<'LoginScreen'>> = ({ navigatio
             onChangeText={(val) => onChange(val.trim())}
             value={value}
             errorText={errors.email?.message}
-            activeColor="border-gray-300"
             style="mt-8"
           />
         )}
@@ -63,7 +62,6 @@ export const LoginScreen: FC<AuthStackScreenProps<'LoginScreen'>> = ({ navigatio
             onChangeText={onChange}
             value={value}
             errorText={errors.password?.message}
-            activeColor="border-gray-300"
           />
         )}
       />

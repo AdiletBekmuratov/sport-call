@@ -17,11 +17,12 @@ interface IButtonProps {
   disabled?: boolean;
   loading?: boolean;
   customChildren?: boolean;
-  mod?: 'solid' | 'outlined';
+  mod?: 'solid' | 'outlined' | 'customOutline';
 }
 
 const solidBtnStyle = 'bg-white';
 const outlinedBtnStyle = 'bg-white border border-2 border-black';
+const customOutlinedStyle = 'bg-black border border-2 border-white';
 
 export const Button: FC<IButtonProps> = ({
   children,
@@ -36,7 +37,11 @@ export const Button: FC<IButtonProps> = ({
     return (
       <View
         style={tw`flex flex-row px-4 py-3 rounded-lg items-center justify-center ${
-          mod === 'solid' ? solidBtnStyle : outlinedBtnStyle
+          mod === 'solid'
+            ? solidBtnStyle
+            : mod === 'customOutline'
+            ? customOutlinedStyle
+            : outlinedBtnStyle
         } opacity-50 ${style}`}>
         {loading && <ActivityIndicator color="gray" size={16} />}
         {customChildren ? (
@@ -53,7 +58,11 @@ export const Button: FC<IButtonProps> = ({
   return (
     <TouchableOpacity
       style={tw`px-4 py-3 rounded-lg items-center ${
-        mod === 'solid' ? solidBtnStyle : outlinedBtnStyle
+        mod === 'solid'
+          ? solidBtnStyle
+          : mod === 'customOutline'
+          ? customOutlinedStyle
+          : outlinedBtnStyle
       } ${style}`}
       onPress={() => onPressVibrate(onPress)}
       activeOpacity={0.5}
@@ -61,7 +70,10 @@ export const Button: FC<IButtonProps> = ({
       {customChildren ? (
         children
       ) : (
-        <Text style={tw`text-white ${mod === 'solid' ? 'text-black' : 'text-white'}`}>
+        <Text
+          style={tw`text-white ${mod === 'customOutline' ? 'text-base font-semibold' : ''} ${
+            mod === 'solid' ? 'text-black' : 'text-white'
+          }`}>
           {children}
         </Text>
       )}
