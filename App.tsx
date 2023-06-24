@@ -14,7 +14,7 @@ export default function App() {
       <GestureHandlerRootView style={{ flex: 1 }}>
         <Provider store={store}>
           <PortalProvider>
-            <StatusBar style="auto" />
+            <StatusBar style="inverted" />
             <NavContainer />
           </PortalProvider>
         </Provider>
