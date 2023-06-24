@@ -17,7 +17,7 @@ export const FavouritesScreen: FC<FavouritesStackScreenProps<'FavouritesScreen'>
   return (
     <View style={tw`flex-1 bg-black w-full p-5 gap-4`}>
       <Input placeholder="Поиск" value={search} onChangeText={handleSearch} />
-      <EventCard />
+      <EventCard navigation={navigation} />
     </View>
   );
 };

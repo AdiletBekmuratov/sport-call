@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-
-import tw from '@/config/twrnc';
-import { ScheduleCard } from '@/components/Schedule';
 import { ScrollView } from 'react-native-gesture-handler';
+
+import { ScheduleCard } from '@/components/Schedule';
+import tw from '@/config/twrnc';
 
 export const ScheduleScreen = () => {
   const [isPlanned, setIsPlanned] = useState(true);

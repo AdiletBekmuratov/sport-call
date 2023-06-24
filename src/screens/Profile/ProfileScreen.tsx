@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
 
-import tw from '@/config/twrnc';
 import { Button } from '@/components/ui';
+import tw from '@/config/twrnc';
 
 export const ProfileScreen = () => {
   return (
-    <View style={tw`h-full bg-black w-full p-4`}>
+    <View style={tw`flex-1 bg-black w-full p-4`}>
       <View style={tw`flex flex-row justify-between`}>
         <View
           style={tw`bg-white bg-opacity-10 w-[168px] rounded-full px-2 py-5 flex justify-center items-center`}>

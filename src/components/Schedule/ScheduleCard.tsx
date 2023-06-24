@@ -3,11 +3,9 @@ import { View, Text, Image } from 'react-native';
 import tw from 'twrnc';
 
 type Props = {
-  schedule?: {
-    date: string;
-    title: string;
-    description: string;
-  };
+  date?: string;
+  title?: string;
+  description?: string;
 };
 
 export const ScheduleCard: FC<Props> = (props) => {

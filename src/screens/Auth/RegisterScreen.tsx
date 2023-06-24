@@ -48,7 +48,6 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
               onChangeText={(val) => onChange(val.trim())}
               value={value}
               errorText={errors.email?.message}
-              activeColor="border-gray-300"
               style="mt-8"
             />
           )}
@@ -64,7 +63,6 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
               onChangeText={(val) => onChange(val.trim())}
               value={value}
               errorText={errors.firstname?.message}
-              activeColor="border-gray-300"
               style="mt-4"
             />
           )}
@@ -80,7 +78,6 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
               onChangeText={(val) => onChange(val.trim())}
               value={value}
               errorText={errors.lastname?.message}
-              activeColor="border-gray-300"
               style="mt-4"
             />
           )}
@@ -97,7 +94,6 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
               onChangeText={(val) => onChange(val.trim())}
               value={value}
               errorText={errors.phone?.message}
-              activeColor="border-gray-300"
               style="mt-4"
             />
           )}
@@ -115,7 +111,6 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
               onChangeText={onChange}
               value={value}
               errorText={errors.password?.message}
-              activeColor="border-gray-300"
             />
           )}
         />
@@ -132,7 +127,6 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
               onChangeText={onChange}
               value={value}
               errorText={errors.confirm?.message}
-              activeColor="border-gray-300"
             />
           )}
         />
