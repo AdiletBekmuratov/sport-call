@@ -62,7 +62,7 @@ export const Input: FC<IInputProps> = ({
   return (
     <View style={tw`${style}`}>
       {label && <Text style={tw`mb-0.5 font-bold text-white text-base`}>{label}</Text>}
-      <View style={tw`relative bg-white/20 rounded-lg justify-center px-4 py-2`}>
+      <View style={tw`relative bg-white/20 rounded-lg justify-center px-4 py-3`}>
         {mask ? (
           <MaskedTextInput
             mask={mask}

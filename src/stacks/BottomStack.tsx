@@ -3,14 +3,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ComponentProps } from 'react';
 import { View } from 'react-native';
 
-import HomeStack from './HomeStack';
 import FavouritesStack from './FavouritesStack';
+import HomeStack from './HomeStack';
 import ProfileStack from './ProfileStack';
-
+import { ScheduleStack } from './ScheduleStack';
 import { BottomTabParamList } from '../types';
 
 import tw from '@/config/twrnc';
-import { ScheduleStack } from './ScheduleStack';
 
 type MaterialCommunityName = ComponentProps<typeof MaterialCommunity>['name'];
 
@@ -25,7 +24,7 @@ export default function MainBottomTabs() {
         tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: '#000000',
-          height: 60,
+          // height: 60,
           borderTopWidth: 0,
         },
       }}>

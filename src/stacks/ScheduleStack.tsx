@@ -1,7 +1,8 @@
-import { ScheduleScreen } from '@/screens/Schedule';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { View, Text } from 'react-native';
+
+import { Header } from '@/components/Header';
+import { ScheduleScreen } from '@/screens/Schedule';
 
 const Stack = createNativeStackNavigator<any>();
 
@@ -13,9 +14,13 @@ export const ScheduleStack = () => {
         headerStyle: {
           backgroundColor: '#000000',
         },
+        headerBackTitleVisible: false,
+        headerTitleAlign: 'left',
         headerTitleStyle: {
           color: '#FFFFFF',
         },
+        headerTintColor: '#FFFFFF',
+        headerTitle: Header,
       }}>
       <Stack.Screen
         name="ScheduleScreen"

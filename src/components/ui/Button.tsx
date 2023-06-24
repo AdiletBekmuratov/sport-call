@@ -57,7 +57,7 @@ export const Button: FC<IButtonProps> = ({
   }
   return (
     <TouchableOpacity
-      style={tw`px-4 py-3 rounded-lg items-center ${
+      style={tw`p-4 rounded-lg items-center ${
         mod === 'solid'
           ? solidBtnStyle
           : mod === 'customOutline'

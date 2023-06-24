@@ -1,6 +1,8 @@
-import { ProfileScreen } from '@/screens/Profile';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+
+import { Header } from '@/components/Header';
+import { ProfileScreen } from '@/screens/Profile';
 
 const Stack = createNativeStackNavigator<any>();
 
@@ -12,9 +14,13 @@ const ProfileStack = () => {
         headerStyle: {
           backgroundColor: '#000000',
         },
+        headerBackTitleVisible: false,
+        headerTitleAlign: 'left',
         headerTitleStyle: {
           color: '#FFFFFF',
         },
+        headerTintColor: '#FFFFFF',
+        headerTitle: Header,
       }}>
       <Stack.Screen
         name="ProfileScreen"
