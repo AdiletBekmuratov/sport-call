@@ -26,9 +26,10 @@ interface IInputProps {
   style?: string;
   secureTextEntry?: boolean;
   keyboardType?: KeyboardTypeOptions;
-  activeColor?: string;
   mask?: MaskedTextInputProps['mask'];
   options?: MaskedTextInputProps['options'];
+  numberOfLine?: number;
+  multiline?: boolean;
 }
 
 export const Input: FC<IInputProps> = ({
@@ -41,19 +42,18 @@ export const Input: FC<IInputProps> = ({
   style = '',
   secureTextEntry,
   keyboardType,
-  activeColor,
+  numberOfLine,
   mask,
   options,
+  multiline = false,
 }) => {
   const [passwordVisible, setPasswordVisible] = useState(true);
-  const [onFocus, setOnFocus] = useState(false);
 
   const handleTogglePassVisibility = () => {
     setPasswordVisible((prev) => !prev);
   };
 
   const handleOnBlur = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-    setOnFocus(false);
     if (onBlur) {
       onBlur(e);
     }
@@ -61,7 +61,7 @@ export const Input: FC<IInputProps> = ({
 
   return (
     <View style={tw`${style}`}>
-      {label && <Text style={tw`mb-0.5 font-bold`}>{label}</Text>}
+      {label && <Text style={tw`mb-0.5 font-bold text-white text-base`}>{label}</Text>}
       <View style={tw`relative bg-white/20 rounded-lg justify-center px-4 py-2`}>
         {mask ? (
           <MaskedTextInput
@@ -74,19 +74,23 @@ export const Input: FC<IInputProps> = ({
             onBlur={handleOnBlur}
             onChangeText={onChangeText}
             value={value}
-            onFocus={() => setOnFocus(true)}
+            numberOfLines={numberOfLine}
+            multiline={multiline}
+            textAlignVertical={multiline ? 'top' : 'auto'}
           />
         ) : (
           <TextInput
             keyboardType={keyboardType ?? 'default'}
             secureTextEntry={secureTextEntry ? passwordVisible : false}
-            style={tw`text-black ${secureTextEntry ? 'pr-10' : ''}`}
+            style={tw`text-white ${secureTextEntry ? 'pr-10' : ''}`}
             placeholder={placeholder}
             onBlur={handleOnBlur}
             onChangeText={onChangeText}
             value={value}
-            onFocus={() => setOnFocus(true)}
-            placeholderTextColor={'#FFFFFF'}
+            placeholderTextColor="#FFFFFF50"
+            numberOfLines={numberOfLine}
+            multiline={multiline}
+            textAlignVertical={multiline ? 'top' : 'auto'}
           />
         )}
 

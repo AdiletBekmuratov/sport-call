@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { HomeStackParamList } from '../types';
 
-import { EventDetailsScreen, HomeScreen } from '@/screens/Home';
+import { EventDetailsScreen, HomeScreen, CreateEventScreen } from '@/screens/Home';
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
 
@@ -26,6 +26,13 @@ export default function HomeStack() {
           title: 'Событие',
         }}
         component={EventDetailsScreen}
+      />
+      <Stack.Screen
+        name="CreateEventScreen"
+        options={{
+          title: 'Новое событие',
+        }}
+        component={CreateEventScreen}
       />
     </Stack.Navigator>
   );
