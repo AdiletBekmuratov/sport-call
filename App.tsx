@@ -1,27 +1,24 @@
-import 'react-native-gesture-handler';
-
+import { PortalProvider } from '@gorhom/portal';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-import store from '@/redux/store';
+import React from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
+
+import store from './src/redux/store';
+import NavContainer from './src/screens/NavContainer';
 
 export default function App() {
   return (
-    <Provider store={store}>
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
-    </Provider>
+    <SafeAreaProvider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <Provider store={store}>
+          <PortalProvider>
+            <StatusBar style="auto" />
+            <NavContainer />
+          </PortalProvider>
+        </Provider>
+      </GestureHandlerRootView>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

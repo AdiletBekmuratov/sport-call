@@ -62,10 +62,7 @@ export const Input: FC<IInputProps> = ({
   return (
     <View style={tw`${style}`}>
       {label && <Text style={tw`mb-0.5 font-bold`}>{label}</Text>}
-      <View
-        style={tw`relative border ${
-          activeColor && onFocus ? activeColor : 'border-gray-200'
-        } rounded-lg justify-center px-4 py-2`}>
+      <View style={tw`relative bg-white/20 rounded-lg justify-center px-4 py-2`}>
         {mask ? (
           <MaskedTextInput
             mask={mask}
@@ -89,6 +86,7 @@ export const Input: FC<IInputProps> = ({
             onChangeText={onChangeText}
             value={value}
             onFocus={() => setOnFocus(true)}
+            placeholderTextColor={'#FFFFFF'}
           />
         )}
 

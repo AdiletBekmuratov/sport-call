@@ -20,7 +20,7 @@ interface IButtonProps {
   mod?: 'solid' | 'outlined';
 }
 
-const solidBtnStyle = 'bg-black';
+const solidBtnStyle = 'bg-white';
 const outlinedBtnStyle = 'bg-white border border-2 border-black';
 
 export const Button: FC<IButtonProps> = ({
@@ -43,7 +43,7 @@ export const Button: FC<IButtonProps> = ({
           children
         ) : (
           <Text
-            style={tw`${mod === 'solid' ? 'text-white' : 'text-black'} ${loading ? 'ml-2' : ''}`}>
+            style={tw`${mod === 'solid' ? 'text-black' : 'text-white'} ${loading ? 'ml-2' : ''}`}>
             {children}
           </Text>
         )}
@@ -61,7 +61,7 @@ export const Button: FC<IButtonProps> = ({
       {customChildren ? (
         children
       ) : (
-        <Text style={tw`text-white ${mod === 'solid' ? 'text-white' : 'text-black'}`}>
+        <Text style={tw`text-white ${mod === 'solid' ? 'text-black' : 'text-white'}`}>
           {children}
         </Text>
       )}

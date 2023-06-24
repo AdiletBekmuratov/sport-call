@@ -5,9 +5,7 @@ import { BottomTabParamList, MainBottomTabsScreenProps } from './bottom.tab.type
 
 export type HomeStackParamList = {
   HomeScreen: undefined;
-  MakesScreen: undefined;
-  VehicleScreen: { vehicle: { id: number; title: string } };
-  VehiclesScreen: { filters?: string; title?: string };
+  EventDetailsScreen: undefined;
 };
 
 export type HomeStackScreenProps<T extends keyof HomeStackParamList> = CompositeScreenProps<

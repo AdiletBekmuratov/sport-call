@@ -22,7 +22,7 @@ export const IconButton: FC<IconButtonProps> = ({
   style = '',
   disabled,
   size = 16,
-  color = '#9CA3AF',
+  color = '#FFFFFF',
 }) => {
   return (
     <TouchableOpacity
@@ -30,7 +30,7 @@ export const IconButton: FC<IconButtonProps> = ({
       onPress={() => onPressVibrate(onPress)}
       activeOpacity={0.5}
       disabled={disabled}>
-      <MaterialCommunityIcons name={name as MaterialCommunityIconsName} color={color} size={size} />{' '}
+      <MaterialCommunityIcons name={name as MaterialCommunityIconsName} color={color} size={size} />
     </TouchableOpacity>
   );
 };

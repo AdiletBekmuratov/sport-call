@@ -35,7 +35,10 @@ export default function NavContainer() {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={tw`flex-1 relative`}>
         {isLoading && <Spinner />}
-        {token ? <MainBottomTabs /> : <AuthStack />}
+        {
+          // token ? <MainBottomTabs /> :
+          <MainBottomTabs />
+        }
         <SnackBar />
       </KeyboardAvoidingView>
     </NavigationContainer>

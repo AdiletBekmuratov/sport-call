@@ -1,10 +1,12 @@
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { NavigatorScreenParams } from '@react-navigation/native';
 
+import { FavouritesStackParamList } from './favourites.stack.type';
 import { HomeStackParamList } from './home.stack.type';
 
 export type BottomTabParamList = {
   HomeStack: NavigatorScreenParams<HomeStackParamList>;
+  FavouritesStack: NavigatorScreenParams<FavouritesStackParamList>;
 };
 
 export type MainBottomTabsScreenProps<T extends keyof BottomTabParamList> = BottomTabScreenProps<
