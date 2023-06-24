@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import { ScheduleCard } from '@/components/Schedule';
+import { RequestCard, ScheduleCard } from '@/components/Schedule';
 import tw from '@/config/twrnc';
+import { Button } from '@/components/ui';
 
 export const ScheduleScreen = () => {
   const [isPlanned, setIsPlanned] = useState(true);
@@ -36,11 +37,21 @@ export const ScheduleScreen = () => {
       </View>
 
       <ScrollView>
-        <ScheduleCard />
-        <ScheduleCard />
-        <ScheduleCard />
-        <ScheduleCard />
-        <ScheduleCard />
+        {isPlanned ? (
+          <>
+            <ScheduleCard />
+            <ScheduleCard />
+            <ScheduleCard />
+            <ScheduleCard />
+            <ScheduleCard />
+          </>
+        ) : (
+          <>
+            <RequestCard />
+            <RequestCard />
+            <RequestCard />
+          </>
+        )}
       </ScrollView>
     </View>
   );
