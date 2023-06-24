@@ -1,7 +1,8 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
       "@/redux/*": ["./src/redux/*"],
@@ -14,5 +15,7 @@
       "@/hooks/*": ["./src/hooks/*"],
       "@/assets/*": ["./assets/*"]
     }
-  }
+  },
+  "extends": "expo/tsconfig.base",
+  "exclude": ["node_modules"]
 }

@@ -1,3 +1,5 @@
+import { z } from 'zod';
+
 import {
   ERROR_INCORRECT_EMAIL,
   ERROR_INCORRECT_PHONE_FORMAT,
@@ -6,7 +8,7 @@ import {
   ERROR_REQUIRED_FIELD,
   ERROR_WEAK_PASSWORD,
 } from '@/utils/error.messages';
-import { z } from 'zod';
+
 
 export const RegisterSchema = z
   .object({

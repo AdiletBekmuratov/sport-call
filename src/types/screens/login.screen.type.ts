@@ -1,9 +1,10 @@
+import { z } from 'zod';
+
 import {
   ERROR_INCORRECT_EMAIL,
   ERROR_REQUIRED_FIELD,
   ERROR_WEAK_PASSWORD,
-} from './../utils/error.messages';
-import { z } from 'zod';
+} from '../../utils/error.messages';
 
 export const LoginSchema = z
   .object({

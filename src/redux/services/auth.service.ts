@@ -1,7 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import axiosInstance from '@/config/axios'; // у него нету ссылки пока что
-
 import { LoginFormData, RegisterFormData } from '@/types/index';
 
 const register = async (userData: RegisterFormData) => {
