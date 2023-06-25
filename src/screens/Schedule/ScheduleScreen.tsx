@@ -22,7 +22,7 @@ export const ScheduleScreen = () => {
             style={tw`text-[#161616] ${
               isPlanned ? 'text-[#161616]' : 'text-[#D0FD3E]'
             } font-semibold`}>
-            Запланировано
+            Оплачено
           </Text>
         </TouchableOpacity>
         <TouchableOpacity

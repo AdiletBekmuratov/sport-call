@@ -12,7 +12,7 @@ export const ProfileScreen = () => {
           style={tw`bg-white bg-opacity-10 w-[168px] rounded-full px-2 py-5 flex justify-center items-center`}>
           <View>
             <Text style={tw`text-xl text-center text-[#D0FD3E]`}>15 </Text>
-            <Text style={tw`text-xl text-center text-[#D0FD3E]`}>тренировок</Text>
+            <Text style={tw`text-xl text-center text-[#D0FD3E]`}>матчей</Text>
           </View>
         </View>
         <View

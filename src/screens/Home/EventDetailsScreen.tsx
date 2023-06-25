@@ -4,10 +4,11 @@ import { Text, View, Dimensions } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
 
 import tw from '@/config/twrnc';
+import { Button } from '@/components/ui';
 
 const width = Dimensions.get('screen').width;
 
-export const EventDetailsScreen = () => {
+export const EventDetailsScreen = ({ navigation }: any) => {
   return (
     <View style={tw`flex-1 bg-black w-full p-4 gap-4`}>
       <View style={tw`items-center justify-center gap-2 mb-4`}>
@@ -33,6 +34,18 @@ export const EventDetailsScreen = () => {
         color="#D0FD3E"
         unfilledColor="#D0FD3E30"
       />
+
+      <View style={tw`mt-2`}>
+        <Text style={tw`text-white text-xl font-bold`}>Участники</Text>
+        <Text style={tw`text-white/80`}>Редактируйте и согласовывайте список гостей!</Text>
+        <Button
+          style={`bg-[#D0FD3E] mt-5`}
+          customChildren
+          onPress={() => navigation.navigate('ListOfMembers')}>
+          <Text style={tw`font-bold text-[#111] text-base`}>Проверить список</Text>
+        </Button>
+      </View>
+
       <View style={tw`gap-2`}>
         <Text style={tw`text-white text-xl font-bold`}>О мероприятии</Text>
         <Text style={tw`text-white/80`}>
@@ -46,6 +59,12 @@ export const EventDetailsScreen = () => {
           <Text style={tw`bg-white/30 px-3 py-1 rounded-full text-white`}>Hello</Text>
         </View>
       </View>
+      <Button
+        onPress={() => {
+          navigation.navigate('PartyScreen');
+        }}>
+        Записаться
+      </Button>
     </View>
   );
 };
