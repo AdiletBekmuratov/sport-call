@@ -6,7 +6,7 @@ import { RequestCard, ScheduleCard } from '@/components/Schedule';
 import tw from '@/config/twrnc';
 import { Button } from '@/components/ui';
 
-export const ScheduleScreen = () => {
+export const ScheduleScreen = ({ navigation }: any) => {
   const [isPlanned, setIsPlanned] = useState(true);
 
   return (
@@ -47,9 +47,9 @@ export const ScheduleScreen = () => {
           </>
         ) : (
           <>
-            <RequestCard />
-            <RequestCard />
-            <RequestCard />
+            <RequestCard navigation={navigation} />
+            <RequestCard navigation={navigation} />
+            <RequestCard navigation={navigation} />
           </>
         )}
       </ScrollView>
