@@ -13,7 +13,7 @@ const register = async (userData: RegisterFormData) => {
 };
 
 const login = async (userData: LoginFormData) => {
-  const response = await axiosInstance.post('/auth/login', userData);
+  const response = await axiosInstance.post('/auth/authenticate', userData);
 
   if (response.data) {
     await AsyncStorage.setItem('token', JSON.stringify(response.data));

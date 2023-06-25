@@ -4,13 +4,16 @@ import React, { FC } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
 import tw from '@/config/twrnc';
-import { FavouritesStackScreenProps, HomeStackScreenProps } from '@/types/index';
+import { FavouritesStackScreenProps, HomeStackScreenProps, IEvent } from '@/types/index';
 import { blurhash } from '@/utils/blurhash';
 
 export const EventCard: FC<
-  | Pick<HomeStackScreenProps<'HomeScreen'>, 'navigation'>
-  | Pick<FavouritesStackScreenProps<'FavouritesScreen'>, 'navigation'>
-> = ({ navigation }) => {
+  (
+    | Pick<HomeStackScreenProps<'HomeScreen'>, 'navigation'>
+    | Pick<FavouritesStackScreenProps<'FavouritesScreen'>, 'navigation'>
+  ) &
+    IEvent
+> = ({ navigation, ...rest }) => {
   return (
     // @ts-ignore
     <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('EventDetailsScreen')}>
@@ -30,11 +33,13 @@ export const EventCard: FC<
       </View>
       <View style={tw`px-2 mt-3 gap-2`}>
         <View style={tw`flex-row gap-2 items-center`}>
-          <View style={tw`rounded-lg bg-[#D0FD3E] px-2 py-1`}>
-            <Text>Food</Text>
-          </View>
+          {rest.cases.map((item, index) => (
+            <View key={index} style={tw`rounded-lg bg-[#D0FD3E] px-2 py-1`}>
+              <Text>{item}</Text>
+            </View>
+          ))}
         </View>
-        <Text style={tw`text-white text-xl font-bold`}>Name of the event</Text>
+        <Text style={tw`text-white text-xl font-bold`}>{rest.name}</Text>
       </View>
     </TouchableOpacity>
   );

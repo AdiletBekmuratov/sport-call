@@ -1,13 +1,15 @@
 import React, { FC, useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { FlatList, View } from 'react-native';
 
 import { HeaderActionButton } from '@/components/Home';
 import { EventCard } from '@/components/Home/EventCard';
 import { Input } from '@/components/ui';
 import tw from '@/config/twrnc';
+import { useFindAllEventsQuery } from '@/redux/services/event.service';
 import { HomeStackScreenProps } from '@/types/index';
 
 export const HomeScreen: FC<HomeStackScreenProps<'HomeScreen'>> = ({ navigation }) => {
+  const { data } = useFindAllEventsQuery();
   const [search, setSearch] = useState('');
 
   useEffect(() => {
@@ -22,7 +24,11 @@ export const HomeScreen: FC<HomeStackScreenProps<'HomeScreen'>> = ({ navigation 
   return (
     <View style={tw`flex-1 bg-black w-full p-4 gap-4`}>
       <Input placeholder="Найти событие" value={search} onChangeText={handleSearch} />
-      <EventCard navigation={navigation} />
+      <FlatList
+        contentContainerStyle={tw`gap-6`}
+        data={data}
+        renderItem={({ item }) => <EventCard navigation={navigation} {...item} />}
+      />
     </View>
   );
 };

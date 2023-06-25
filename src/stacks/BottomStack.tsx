@@ -10,7 +10,6 @@ import { ScheduleStack } from './ScheduleStack';
 import { BottomTabParamList } from '../types';
 
 import tw from '@/config/twrnc';
-import PartyStack from './PartyStack';
 
 type MaterialCommunityName = ComponentProps<typeof MaterialCommunity>['name'];
 

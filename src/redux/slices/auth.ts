@@ -62,7 +62,7 @@ export const addUser = createAsyncThunk('auth/addUser', async () => {
   const jsonValue = await AsyncStorage.getItem('token');
   const token: IToken = jsonValue != null ? JSON.parse(jsonValue) : null;
   if (token) {
-    const decodedJwt = jwt_decode(token.accessToken) as JwtPayload;
+    const decodedJwt = jwt_decode(token.token) as JwtPayload;
     if (decodedJwt?.exp! * 1000 < Date.now()) {
       await AsyncStorage.removeItem('token');
       return { token: null };

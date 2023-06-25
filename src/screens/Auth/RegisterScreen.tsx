@@ -21,9 +21,7 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
       email: '',
-      firstname: '',
-      lastname: '',
-      phone: '',
+      username: '',
       password: '',
       confirm: '',
     },
@@ -33,9 +31,9 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
   });
 
   return (
-    <SafeAreaView style={tw`flex-1 p-5 bg-gray-100 w-full`}>
-      <Text style={tw`text-3xl font-bold mt-12`}>Давайте познакомимся!</Text>
-      <Text style={tw`text-lg font-medium text-gray-500 mt-2`}>Создайте Ваш новый аккаунт</Text>
+    <SafeAreaView style={tw`flex-1 p-4 bg-black w-full`}>
+      <Text style={tw`text-3xl text-white font-bold mt-12`}>Давайте познакомимся!</Text>
+      <Text style={tw`text-lg font-medium text-gray-300 mt-2`}>Создайте Ваш новый аккаунт</Text>
       <ScrollView>
         <Controller
           control={control}
@@ -54,7 +52,7 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
         />
         <Controller
           control={control}
-          name="firstname"
+          name="username"
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
               placeholder="Имя"
@@ -62,38 +60,7 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
               onBlur={onBlur}
               onChangeText={(val) => onChange(val.trim())}
               value={value}
-              errorText={errors.firstname?.message}
-              style="mt-4"
-            />
-          )}
-        />
-        <Controller
-          control={control}
-          name="lastname"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <Input
-              placeholder="Фамилия"
-              label="Фамилия"
-              onBlur={onBlur}
-              onChangeText={(val) => onChange(val.trim())}
-              value={value}
-              errorText={errors.lastname?.message}
-              style="mt-4"
-            />
-          )}
-        />
-        <Controller
-          control={control}
-          name="phone"
-          render={({ field: { onChange, onBlur, value } }) => (
-            <Input
-              placeholder="+7 (___) ___ ____"
-              label="Телефон"
-              onBlur={onBlur}
-              mask="+7 (999) 999 9999"
-              onChangeText={(val) => onChange(val.trim())}
-              value={value}
-              errorText={errors.phone?.message}
+              errorText={errors.username?.message}
               style="mt-4"
             />
           )}
@@ -132,15 +99,15 @@ export const RegisterScreen: FC<AuthStackScreenProps<'RegisterScreen'>> = ({ nav
         />
       </ScrollView>
 
-      <View style={tw`flex-grow bg-gray-100 mt-4`}>
-        <Button style="w-full mt-auto" onPress={onSubmit}>
+      <View style={tw`flex-grow bg-black mt-4`}>
+        <Button style="w-full mt-auto bg-[#D0FD3E]" onPress={onSubmit}>
           Начать
         </Button>
         <TextButton
           containerStyle="mt-4"
-          textStyle="text-gray-500 text-center"
+          textStyle="text-gray-300 text-center"
           onPress={() => navigation.replace('LoginScreen')}>
-          Уже есть аккаунт? <Text style={tw`font-bold text-black`}>Войти</Text>
+          Уже есть аккаунт? <Text style={tw`font-bold text-white`}>Войти</Text>
         </TextButton>
       </View>
     </SafeAreaView>

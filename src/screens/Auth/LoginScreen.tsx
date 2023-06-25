@@ -31,9 +31,9 @@ export const LoginScreen: FC<AuthStackScreenProps<'LoginScreen'>> = ({ navigatio
   });
 
   return (
-    <SafeAreaView style={tw`flex-1 p-5 bg-gray-100 w-full`}>
-      <Text style={tw`text-3xl font-bold mt-12`}>Добро пожаловать!</Text>
-      <Text style={tw`text-lg font-medium text-gray-500 mt-2`}>Войдите в Ваш аккаунт</Text>
+    <SafeAreaView style={tw`flex-1 p-4 bg-black w-full`}>
+      <Text style={tw`text-3xl text-white font-bold mt-12`}>Добро пожаловать!</Text>
+      <Text style={tw`text-lg font-medium text-gray-300 mt-2`}>Войдите в Ваш аккаунт</Text>
       <Controller
         control={control}
         name="email"
@@ -72,15 +72,15 @@ export const LoginScreen: FC<AuthStackScreenProps<'LoginScreen'>> = ({ navigatio
         Забыли пароль?
       </TextButton>
 
-      <View style={tw`flex-grow bg-gray-100 mt-4`}>
-        <Button style="w-full mt-auto" onPress={onSubmit}>
+      <View style={tw`flex-grow bg-black mt-4`}>
+        <Button style="w-full mt-auto bg-[#D0FD3E]" onPress={onSubmit}>
           Отправить
         </Button>
         <TextButton
           containerStyle="mt-4"
-          textStyle="text-gray-500 text-center"
+          textStyle="text-gray-200 text-center"
           onPress={() => navigation.replace('RegisterScreen')}>
-          Еще нет аккаунта? <Text style={tw`font-bold text-black`}>Зарегистрироваться</Text>
+          Еще нет аккаунта? <Text style={tw`font-bold text-white`}>Зарегистрироваться</Text>
         </TextButton>
       </View>
 

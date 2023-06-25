@@ -1,5 +1,5 @@
 export interface IToken {
-  accessToken: string;
+  token: string;
 }
 
 export interface IAuth {

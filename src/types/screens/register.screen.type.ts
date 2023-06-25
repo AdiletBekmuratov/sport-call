@@ -13,11 +13,7 @@ import {
 export const RegisterSchema = z
   .object({
     email: z.string({ required_error: ERROR_REQUIRED_FIELD }).email(ERROR_INCORRECT_EMAIL),
-    firstname: z.string({ required_error: ERROR_REQUIRED_FIELD }).min(1, ERROR_MIN_VAL(1)),
-    lastname: z.string({ required_error: ERROR_REQUIRED_FIELD }).min(1, ERROR_MIN_VAL(1)),
-    phone: z
-      .string({ required_error: ERROR_REQUIRED_FIELD })
-      .regex(/^\+7 \(\d{3}\) \d{3} \d{4}$/, ERROR_INCORRECT_PHONE_FORMAT),
+    username: z.string({ required_error: ERROR_REQUIRED_FIELD }).min(1, ERROR_MIN_VAL(1)),
     password: z
       .string({ required_error: ERROR_REQUIRED_FIELD })
       .regex(
