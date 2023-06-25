@@ -1,15 +1,16 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Text } from 'react-native';
+
 import React from 'react';
 
-import { Header } from '@/components/Header';
-import { ScheduleScreen } from '@/screens/Schedule';
+import { PartyScreen } from '@/screens/Party';
 
-const Stack = createNativeStackNavigator<any>();
+const Stack = createNativeStackNavigator();
 
-export const ScheduleStack = () => {
+const PartyStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="ScheduleScreen"
+      initialRouteName="PartyScreen"
       screenOptions={{
         headerStyle: {
           backgroundColor: '#000000',
@@ -20,13 +21,16 @@ export const ScheduleStack = () => {
           color: '#FFFFFF',
         },
         headerTintColor: '#FFFFFF',
-        headerTitle: Header,
       }}>
       <Stack.Screen
-        name="ScheduleScreen"
-        options={{ title: 'Расписание' }}
-        component={ScheduleScreen}
+        options={{
+          title: 'Создание команды',
+        }}
+        name="PartyScreen"
+        component={PartyScreen}
       />
     </Stack.Navigator>
   );
 };
+
+export default PartyStack;

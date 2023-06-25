@@ -9,6 +9,7 @@ export type BottomTabParamList = {
   FavouritesStack: NavigatorScreenParams<FavouritesStackParamList>;
   ScheduleStack: NavigatorScreenParams<any>;
   ProfileStack: NavigatorScreenParams<any>;
+  PartyStack: NavigatorScreenParams<any>;
 };
 
 export type MainBottomTabsScreenProps<T extends keyof BottomTabParamList> = BottomTabScreenProps<

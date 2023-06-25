@@ -7,6 +7,9 @@ export type HomeStackParamList = {
   HomeScreen: undefined;
   EventDetailsScreen: undefined;
   CreateEventScreen: undefined;
+  PartyScreen: undefined;
+  TeamScreen: undefined;
+  ListOfMembers: undefined;
 };
 
 export type HomeStackScreenProps<T extends keyof HomeStackParamList> = CompositeScreenProps<
