@@ -8,8 +8,8 @@ import tw from '@/config/twrnc';
 import { useCreateEventMutation } from '@/redux/services/event.service';
 import { CreateEventFormData, CreateEventSchema } from '@/types/create-event.type';
 
-export const CreateEventScreen = () => {
-  const [createEvent, { isLoading }] = useCreateEventMutation();
+export const CreateEventScreen = ({ navigation }: any) => {
+  const [createEvent] = useCreateEventMutation();
 
   const {
     control,
@@ -18,6 +18,7 @@ export const CreateEventScreen = () => {
   } = useForm<CreateEventFormData>({
     resolver: zodResolver(CreateEventSchema),
     defaultValues: {
+      iin: '',
       name: '',
       description: '',
       min_people: 1,
@@ -30,11 +31,29 @@ export const CreateEventScreen = () => {
   });
 
   const onSubmit = handleSubmit(async (data) => {
-    createEvent(data);
+    createEvent(data)
+      .unwrap()
+      .then((res) => {
+        navigation.pop();
+      });
   });
   return (
     <View style={tw`flex-1 bg-black w-full p-4 gap-4`}>
       <ScrollView contentContainerStyle={tw`gap-4`}>
+        <Controller
+          control={control}
+          name="iin"
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Input
+              label="ИИН*"
+              placeholder="ИИН"
+              onBlur={onBlur}
+              onChangeText={(val) => onChange(val)}
+              value={value}
+              errorText={errors.name?.message}
+            />
+          )}
+        />
         <Controller
           control={control}
           name="name"

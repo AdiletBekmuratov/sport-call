@@ -9,7 +9,7 @@ import { useFindAllEventsQuery } from '@/redux/services/event.service';
 import { HomeStackScreenProps } from '@/types/index';
 
 export const HomeScreen: FC<HomeStackScreenProps<'HomeScreen'>> = ({ navigation }) => {
-  const { data } = useFindAllEventsQuery();
+  const { data = [], isLoading } = useFindAllEventsQuery();
   const [search, setSearch] = useState('');
 
   useEffect(() => {
@@ -25,8 +25,9 @@ export const HomeScreen: FC<HomeStackScreenProps<'HomeScreen'>> = ({ navigation 
     <View style={tw`flex-1 bg-black w-full p-4 gap-4`}>
       <Input placeholder="Найти событие" value={search} onChangeText={handleSearch} />
       <FlatList
+        refreshing={isLoading}
         contentContainerStyle={tw`gap-6`}
-        data={data}
+        data={[...data].reverse()}
         renderItem={({ item }) => <EventCard navigation={navigation} {...item} />}
       />
     </View>

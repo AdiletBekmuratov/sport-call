@@ -1,14 +1,12 @@
-import React, { useState, FC } from 'react';
-import { ScrollView } from 'react-native-gesture-handler';
+import React, { FC } from 'react';
+import { ScrollView } from 'react-native';
 import tw from 'twrnc';
 
 import { TeamAccordion } from '@/components/Home';
 
 export const ListOfMembers: FC = (props: any) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <ScrollView style={tw`flex-1 bg-black p-4`}>
+    <ScrollView contentContainerStyle={tw`flex-1 bg-black p-4`}>
       <TeamAccordion />
       <TeamAccordion />
       <TeamAccordion />

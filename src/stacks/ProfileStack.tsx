@@ -2,9 +2,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Header } from '@/components/Header';
-import { ProfileScreen } from '@/screens/Profile';
+import { ProfileScreen, ReportScreen } from '@/screens/Profile';
+import { ProfileStackParamList } from '@/types/stacks/profile.stack.type';
 
-const Stack = createNativeStackNavigator<any>();
+const Stack = createNativeStackNavigator<ProfileStackParamList>();
 
 const ProfileStack = () => {
   return (
@@ -27,6 +28,7 @@ const ProfileStack = () => {
         options={{ title: 'Мой профиль' }}
         component={ProfileScreen}
       />
+      <Stack.Screen name="ReportScreen" options={{ title: 'Отчет' }} component={ReportScreen} />
     </Stack.Navigator>
   );
 };

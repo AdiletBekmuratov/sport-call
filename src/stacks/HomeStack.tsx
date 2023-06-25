@@ -9,7 +9,6 @@ import {
   HomeScreen,
   ListOfMembers,
   PartyScreen,
-  TeamScreen,
 } from '@/screens/Home';
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
@@ -36,13 +35,6 @@ export default function HomeStack() {
           title: 'Создание команды',
         }}
         component={PartyScreen}
-      />
-      <Stack.Screen
-        name="TeamScreen"
-        options={{
-          title: 'Оплата',
-        }}
-        component={TeamScreen}
       />
       <Stack.Screen
         name="ListOfMembers"

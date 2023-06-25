@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react';
-import { View, Text, Dimensions, Image } from 'react-native';
+import { useState } from 'react';
+import { Dimensions, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 //@ts-ignore
 import ProgressBar from 'react-native-progress/Bar';
-
 import tw from 'twrnc';
 
-import { Button, Input } from '@/components/ui';
 import { Users } from '@/components/Home';
+import { Button, Input } from '@/components/ui';
 
 const width = Dimensions.get('screen').width;
 
@@ -39,7 +38,7 @@ export const PartyScreen = ({ navigation }: { navigation: any }) => {
               unfilledColor="#D0FD3E30"
             />
             <Input
-              style={`mt-4`}
+              style="mt-4"
               placeholder="Название команды"
               value={teamName}
               onChangeText={handleTeamName}
@@ -58,7 +57,7 @@ export const PartyScreen = ({ navigation }: { navigation: any }) => {
           <Button
             customChildren
             style={`bg-[#D0FD3E] `}
-            onPress={() => console.log('Team has been created')}>
+            onPress={() => navigation.navigate('ScheduleStack')}>
             <Text style={tw`text-[#111111] font-bold text-xl`}>Регистрация команды</Text>
           </Button>
         </View>

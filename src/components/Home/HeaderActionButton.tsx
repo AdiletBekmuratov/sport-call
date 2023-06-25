@@ -11,7 +11,7 @@ export const HeaderActionButton: FC<Pick<HomeStackScreenProps<'HomeScreen'>, 'na
   navigation,
 }) => {
   return (
-    <Button onPress={() => navigation.navigate('CreateEventScreen')} customChildren>
+    <Button onPress={() => navigation.navigate('CreateEventScreen')} customChildren style="py-2">
       <View style={tw`flex-row items-center gap-2`}>
         <MaterialCommunityIcons color="#000000" size={18} name="plus" />
         <Text>Добавить</Text>

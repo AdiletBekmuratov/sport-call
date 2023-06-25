@@ -27,10 +27,7 @@ export const TeamAccordion: FC<Props> = (props) => {
           <Text style={tw`w-full mt-1.5 opacity-80 text-white font-bold text-base`}>5 человек</Text>
         </View>
         <TouchableOpacity onPress={() => setIsOpen(!isOpen)} style={tw`w-6 h-3`}>
-          <Image
-            style={tw`w-full h-full ${isOpen ? 'rotate-90 transition-all' : ''}`}
-            source={arrow}
-          />
+          <Image style={tw`w-full h-full`} source={arrow} />
         </TouchableOpacity>
       </View>
 

@@ -16,7 +16,10 @@ export const EventCard: FC<
 > = ({ navigation, ...rest }) => {
   return (
     // @ts-ignore
-    <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('EventDetailsScreen')}>
+    <TouchableOpacity
+      activeOpacity={0.7}
+      // @ts-ignore
+      onPress={() => navigation.navigate('EventDetailsScreen', rest)}>
       <View style={tw`relative`}>
         <Image
           style={tw`rounded-lg w-full h-46`}

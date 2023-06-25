@@ -1,17 +1,15 @@
 import React from 'react';
 import { View, Text, Dimensions } from 'react-native';
-import tw from 'twrnc';
+import { ScrollView } from 'react-native-gesture-handler';
 //@ts-ignore
 import ProgressBar from 'react-native-progress/Bar';
-import { ScrollView } from 'react-native-gesture-handler';
+import tw from 'twrnc';
+
 import { Users } from '@/components/Home';
 import { Button } from '@/components/ui';
 const width = Dimensions.get('screen').width;
 
-export const PaymentScreen = (props: any) => {
-  // console.log();
-  const teamId = props.route.params.teamId;
-  console.log(teamId);
+export const PaymentScreen = ({ navigation }: any) => {
   return (
     <View style={tw`flex-1 bg-black w-full p-4 gap-4`}>
       <View style={tw`w-full`}>
@@ -43,9 +41,8 @@ export const PaymentScreen = (props: any) => {
         <Button
           customChildren
           style="w-full bg-[#D0FD3E]"
-          // disabled={true}
           onPress={() => {
-            console.log('ОПЛАТИ!');
+            navigation.navigate('MyPaymentScreen');
           }}>
           <Text style={tw`font-bold text-xl`}>Отправить оплату команды</Text>
         </Button>
