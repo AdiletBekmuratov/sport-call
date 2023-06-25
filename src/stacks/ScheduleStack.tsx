@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Header } from '@/components/Header';
-import { ScheduleScreen } from '@/screens/Schedule';
+import { PaymentScreen, ScheduleScreen } from '@/screens/Schedule';
 
 const Stack = createNativeStackNavigator<any>();
 
@@ -26,6 +26,11 @@ export const ScheduleStack = () => {
         name="ScheduleScreen"
         options={{ title: 'Расписание' }}
         component={ScheduleScreen}
+      />
+      <Stack.Screen
+        name="PaymentScreen"
+        options={{ title: 'Олпатить' }}
+        component={PaymentScreen}
       />
     </Stack.Navigator>
   );
